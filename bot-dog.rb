@@ -2,7 +2,7 @@ user_name = ARGV
 
 ### Menu Screen ###
 def menu
-    puts "Hooman! What would you like to do?"
+    # puts "Hooman! What would you like to do?"
     puts "Press 1 to pat BotDog"
     puts "Press 2 to feed BotDog"
     puts "Press 3 to play with BotDog"
@@ -51,17 +51,41 @@ def feed
         end
     end
 
-menu
+def play
+    $play_counter += 1
+    if $play_counter == 3
+        puts "Oh dear. BotDog got to excited and peed in the terminal!"
+    elsif $play_counter < 3
+        puts "Bork! Fetch is my favourite <3"
+    end
+end
 
-selection = gets.chomp.to_i
+puts "Hey #{ARGV}, I'm BotDog."
+# menu
+
+# selection = gets.chomp.to_i
 
 $pat_counter = 0
 $feed_counter = 0
 $play_counter = 0
 
+until game = false
+    menu
+    selection = gets.chomp.to_i
 
-if selection == 1
-    pat
-elsif selection == 2
-    feed
+    if selection == 1
+        pat
+        # break
+    elsif selection == 2
+        feed
+        # break
+    elsif selection == 3
+        play
+        # break
+    elsif selection == 000
+        game = false
+        exit
+    else 
+        menu
+    end
 end
