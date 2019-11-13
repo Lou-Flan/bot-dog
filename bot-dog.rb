@@ -13,27 +13,12 @@ def welcome
     puts "=     \\/  \\  | _\\            ="
     puts "=      \\  /_ ||  \\_          ="
     puts "=       \\____)|_) \\_)        ="
+    puts "=                            ="
     puts "*"*30
     puts "       WELCOME TO BOTDOG       "
     puts "*"*30
 end
 
-# def feed
-#     puts "*"*30
-#     puts "=                      ="       
-#     puts "=________________      ="
-#     puts "='------._.------'\    ="
-#     puts "=  \_______________\   ="
-#     puts "= .'|            .'|   ="
-#     puts "=.'_____________.' .|  ="
-#     puts "=|              |   |  ="
-#     puts "=|  Scooby _.-. | . |  ="
-#     puts "=|  *     (_.-' |   |  ="
-#     puts "=|    Snacks    |  .|  ="
-#     puts "=| *          * |  .'  ="
-#     puts "=|______________|.'    ="
-#     puts "*"*30
-# end
 
 ### Menu Screen ###
 def menu
@@ -69,18 +54,19 @@ def feed
             $feed_counter = 0
         elsif $feed_counter < 3
             puts "*"*30
-            puts "=                      ="       
-            puts "= ________________      ="
-            puts "='------._.------'\\    ="
-            puts "=  \\_______________\\   ="
-            puts "=  .'|            .'|   ="
-            puts "=.'_____________.' .|  ="
-            puts "=|              |   |  ="
-            puts "=|  BotDog _.-. | . |  ="
-            puts "=|  *     (_.-' |   |  ="
-            puts "=|    Biscuits  |  .|  ="
-            puts "=| *          * |  .'  ="
-            puts "=|______________|.'    ="
+            puts "=                            ="      
+            puts "=     ________________       ="
+            puts "=    '------._.------'\\      ="
+            puts "=      \\_______________\\     ="
+            puts "=      .'|            .'|    ="
+            puts "=    .'_____________.' .|    ="
+            puts "=    |              |   |    ="
+            puts "=    |  BotDog _.-. | . |    ="
+            puts "=    |  *     (_.-' |   |    ="
+            puts "=    |    Biscuits  |  .|    ="
+            puts "=    | *          * |  .'    ="
+            puts "=    |______________|.'      ="
+            puts "=                            ="
             puts "*"*30
             puts "You fed BotDog!"
         end
