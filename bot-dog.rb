@@ -1,5 +1,22 @@
 user_name = ARGV
 
+### Welcome Screen ###
+def welcome
+    puts "******************************"
+    puts "=             __             ="
+    puts "=            /  \\            ="
+    puts "=           / ..|\\           ="
+    puts "=          (_\\  |_)          ="
+    puts "=          /  \\@'            ="
+    puts "=         /     \\            ="
+    puts "=     _  /  `   |            ="
+    puts "=     \\/  \\  | _\\            ="
+    puts "=      \\  /_ ||  \\_          ="
+    puts "=       \\____)|_) \\_)        ="
+    puts "******************************"
+    puts "       WELCOME TO BOTDOG       "
+    puts "******************************"
+end
 ### Menu Screen ###
 def menu
     # puts "Hooman! What would you like to do?"
@@ -28,22 +45,6 @@ def feed
     $feed_counter += 1
         if $feed_counter == 3
             puts "BotDog is so full"
-            puts "　　　　　 　　　
-                              ｛＼　　　 　　
-            　　　　　　　　 .,iﾄ .ﾞﾐ.　　　　
-            　　　　　 ._,,yr!″　 《yyy,,,,_　　　　　
-            　　　　 ,メ″　　　 .｛l厂　 ´ﾞ)z　　
-            　　　　.l|　　　　　 l厂　　　　 ﾞlly_　
-            　　 .,ノﾐly　　　　　　　　　 　,メﾞﾞ＼.　
-            　　,i「　 .ﾞ＼u,,,,,,__　 .___,,,yr!″　　.\　 　
-            　　《　　　　　　⌒ﾞﾞ¨⌒′　　　　　il|､　
-            　ノ'＼　　　　　　　　　　　　 　　 _yl¨ﾞ《
-            i|′ .ﾞ＼u_　　　　　　　　　 _,yr厂　　ﾞlli
-            li,　　　　.ﾞﾞ^冖￢─ｰ￢冖ﾞ¨′　　　.メl
-            .＼,_　　　　　　　　　　　　　 　　　 ,zl「
-            　　ﾞﾞ＼u,,_　　　　　　　　　 .__,,yrll^″　　
-            　　　　¨^～---vvvvrr冖¨¨′..."
-
             puts "Poopsy daisy"
             $feed_counter = 0
         elsif $feed_counter < 3
@@ -60,10 +61,8 @@ def play
     end
 end
 
+welcome
 puts "Hey #{ARGV}, I'm BotDog."
-# menu
-
-# selection = gets.chomp.to_i
 
 $pat_counter = 0
 $feed_counter = 0
