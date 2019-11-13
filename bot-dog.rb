@@ -2,7 +2,7 @@ user_name = ARGV
 
 ### Welcome Screen ###
 def welcome
-    puts "******************************"
+    puts "*"*30
     puts "=             __             ="
     puts "=            /  \\            ="
     puts "=           / ..|\\           ="
@@ -13,17 +13,19 @@ def welcome
     puts "=     \\/  \\  | _\\            ="
     puts "=      \\  /_ ||  \\_          ="
     puts "=       \\____)|_) \\_)        ="
-    puts "******************************"
+    puts "*"*30
     puts "       WELCOME TO BOTDOG       "
-    puts "******************************"
+    puts "*"*30
 end
 ### Menu Screen ###
 def menu
     # puts "Hooman! What would you like to do?"
+    puts "*"*30
     puts "Press 1 to pat BotDog"
     puts "Press 2 to feed BotDog"
     puts "Press 3 to play with BotDog"
     puts "Press 000 to quit"
+    puts "*"*30
 end
 
 ### Counters ###
