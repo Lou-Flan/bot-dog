@@ -1,6 +1,6 @@
 user_name = ARGV
 
-### Welcome Screen ###
+### ART ###
 def welcome
     puts "*"*30
     puts "=             __             ="
@@ -17,6 +17,24 @@ def welcome
     puts "       WELCOME TO BOTDOG       "
     puts "*"*30
 end
+
+# def feed
+#     puts "*"*30
+#     puts "=                      ="       
+#     puts "=________________      ="
+#     puts "='------._.------'\    ="
+#     puts "=  \_______________\   ="
+#     puts "= .'|            .'|   ="
+#     puts "=.'_____________.' .|  ="
+#     puts "=|              |   |  ="
+#     puts "=|  Scooby _.-. | . |  ="
+#     puts "=|  *     (_.-' |   |  ="
+#     puts "=|    Snacks    |  .|  ="
+#     puts "=| *          * |  .'  ="
+#     puts "=|______________|.'    ="
+#     puts "*"*30
+# end
+
 ### Menu Screen ###
 def menu
     # puts "Hooman! What would you like to do?"
@@ -50,15 +68,36 @@ def feed
             puts "Poopsy daisy"
             $feed_counter = 0
         elsif $feed_counter < 3
-            puts "YUM"
+            puts "*"*30
+            puts "=                      ="       
+            puts "= ________________      ="
+            puts "='------._.------'\\    ="
+            puts "=  \\_______________\\   ="
+            puts "=  .'|            .'|   ="
+            puts "=.'_____________.' .|  ="
+            puts "=|              |   |  ="
+            puts "=|  BotDog _.-. | . |  ="
+            puts "=|  *     (_.-' |   |  ="
+            puts "=|    Biscuits  |  .|  ="
+            puts "=| *          * |  .'  ="
+            puts "=|______________|.'    ="
+            puts "*"*30
+            puts "You fed BotDog!"
         end
     end
 
 def play
     $play_counter += 1
     if $play_counter == 3
-        puts "Oh dear. BotDog got to excited and peed in the terminal!"
+        puts "Oh dear. BotDog got too excited and peed in the terminal!"
     elsif $play_counter < 3
+        puts "      
+                (\
+                (\_\^^__o   .
+                `-'\ ` /   `(
+                |  \_____|
+                |        |                _
+                ./`,----./~|     .   . - ()"
         puts "Bork! Fetch is my favourite <3"
     end
 end
@@ -76,13 +115,10 @@ until game = false
 
     if selection == 1
         pat
-        # break
     elsif selection == 2
         feed
-        # break
     elsif selection == 3
         play
-        # break
     elsif selection == 000
         game = false
         exit
