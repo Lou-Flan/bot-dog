@@ -58,11 +58,24 @@ $pat_counter += 1
         puts "ZZZ ZZZ ZZZ"
         exit
     elsif $pat_counter < 3
-        puts "Bork!"
-        puts "Good boi loves pats"
-        puts "<3"
+        border
+        puts "=            _               ="
+        puts "=       /\\,_/\\|              ="
+        puts "=       /==_ (               ="
+        puts "=      (Y_.) /       ///     ="
+        puts "=       U ) (__,_____) )     ="
+        puts "=         )'   >     `/      ="
+        puts "=         |._  _____  |      ="
+        puts "=         | | (    \\| (      ="
+        puts "=         | | |    || |      ="
+        puts "=    ,,-. ),)_/ ., ))_/,,.-,_="
+        puts "=            . ,-/,_         ="
+        border
+        puts "You pat BotDog!"
     end
 end
+
+
 
 def feed
     $feed_counter += 1
