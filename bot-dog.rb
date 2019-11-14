@@ -1,8 +1,12 @@
 user_name = ARGV
 
 ### ART ###
-def welcome
+def border
     puts "*"*30
+end
+
+def welcome
+    border
     puts "=             __             ="
     puts "=            /  \\            ="
     puts "=           / ..|\\           ="
@@ -16,26 +20,26 @@ def welcome
     puts "=                            ="
     puts "*"*30
     puts "       WELCOME TO BOTDOG       "
-    puts "*"*30
+    border
 end
 
 
 ### Menu Screen ###
 def menu
     # puts "Hooman! What would you like to do?"
-    puts "*"*30
+    border
     puts "Press 1 to pat BotDog"
     puts "Press 2 to feed BotDog"
     puts "Press 3 to play with BotDog"
     puts "Press 000 to quit"
-    puts "*"*30
+    border
 end
 
 ### Counters ###
 def pat
 $pat_counter += 1
     if $pat_counter == 3
-        puts "*"*30
+        border
         puts "=                            ="
         puts "=  .    .   *       *        ="
         puts "=     *       .   )    .     =" 
@@ -48,7 +52,7 @@ $pat_counter += 1
         puts "= |             ||  _ |      ="                
         puts "= |             ||'' ||      ="                    
         puts "= |_____________|| |_|L      =" 
-        puts "*"*30 
+        border 
         puts "You pat BotDog so much
                  he went to bed!"
         puts "ZZZ ZZZ ZZZ"
@@ -62,36 +66,50 @@ end
 
 def feed
     $feed_counter += 1
-        if $feed_counter == 3
-            puts "BotDog is so full"
-            puts "Poopsy daisy"
-            $feed_counter = 0
-        elsif $feed_counter < 3
-            puts "*"*30
-            puts "=                            ="      
-            puts "=     ________________       ="
-            puts "=    '------._.------'\\      ="
-            puts "=      \\_______________\\     ="
-            puts "=      .'|            .'|    ="
-            puts "=    .'_____________.' .|    ="
-            puts "=    |              |   |    ="
-            puts "=    |  BotDog _.-. | . |    ="
-            puts "=    |  *     (_.-' |   |    ="
-            puts "=    |    Biscuits  |  .|    ="
-            puts "=    | *          * |  .'    ="
-            puts "=    |______________|.'      ="
-            puts "=                            ="
-            puts "*"*30
-            puts "You fed BotDog!"
+    if $feed_counter == 3
+        puts "BotDog is so full"
+        puts "Poopsy daisy"
+        $feed_counter = 0
+    elsif $feed_counter < 3
+        border
+        puts "=                            ="      
+        puts "=     ________________       ="
+        puts "=    '------._.------'\\      ="
+        puts "=      \\_______________\\     ="
+        puts "=      .'|            .'|    ="
+        puts "=    .'_____________.' .|    ="
+        puts "=    |              |   |    ="
+        puts "=    |  BotDog _.-. | . |    ="
+        puts "=    |  *     (_.-' |   |    ="
+        puts "=    |    Biscuits  |  .|    ="
+        puts "=    | *          * |  .'    ="
+        puts "=    |______________|.'      ="
+        puts "=                            ="
+        border
+        puts "You fed BotDog!"
         end
     end
 
 def play
     $play_counter += 1
     if $play_counter == 3
-        puts "Oh dear. BotDog got too excited and peed in the terminal!"
+        border
+        puts "=                            ="
+        puts "=                            ="
+        puts "=                  |\\        ="
+        puts "=          /    /\\/o\\_       ="
+        puts "=         (.-.__.(   __o     ="
+        puts "=      /\\_(      .----'      ="
+        puts "=       .' \\____/            ="
+        puts "=      /   /  / \\            ="
+        puts "=  ___:____\\__\\__\\_______    ="
+        puts "=                            ="
+        border
+        puts "OH NO!" 
+        puts "BotDog got too excited..."
+        puts "and peed in the terminal!"
     elsif $play_counter < 3
-        puts "*"*30
+        border
         puts "=                            ="
         puts "=                       _    ="       
         puts "=                  .  -  ()  =" 
@@ -102,10 +120,18 @@ def play
         puts "=   (_/'~~      ''''(;       =" 
         puts "=                            ="
         puts "=                            =" 
-        puts "*"*30
+        border
         puts "You threw a ball for BotDog!"
     end
 end
+
+
+
+
+
+
+
+
 
 
 
