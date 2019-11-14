@@ -1,3 +1,6 @@
+require 'colorize'
+require 'colorized_string'
+
 user_name = ARGV
 
 ### ART ###
@@ -19,7 +22,7 @@ def welcome
     puts "=       \\____)|_) \\_)        ="
     puts "=                            ="
     puts "*"*30
-    puts "       WELCOME TO BOTDOG       "
+    puts ColorizedString["       BORK BORK       "].colorize(:red)
     border
     `afplay -t 1 ./sound-files/bark.mp3`
 end
@@ -42,16 +45,16 @@ $pat_counter += 1
     if $pat_counter == 3
         border
         puts "=                            ="
-        puts "=  .    .   *       *        ="
-        puts "=     *       .   )    .     =" 
-        puts "=          .        .        =" 
+        puts "=" + "  .    .   *       *        ".colorize(:yellow) + "="
+        puts "=" + "    *       .    )    .     ".colorize(:yellow) + "="
+        puts "=" + "           .         .      ".colorize(:yellow) + "=" 
         puts "=   .-------------.          =" 
         puts "=  /_/_/_/_/_/_/_/ \\         ="       
         puts "= //_/_/_/_/_/_// _ \\ __     ="      
         puts "=/_/_/_/_/_/_/_/|/ \\.' .`-o  ="                
         puts "= |             ||-'(/ ,--'  ="             
-        puts "= |             ||  _ |      ="                
-        puts "= |             ||'' ||      ="                    
+        puts "= |   BOTDOGS   ||  _ |      ="                
+        puts "= |    CRIB     ||'' ||      ="                    
         puts "= |_____________|| |_|L      =" 
         border 
         puts "You pat BotDog so much
