@@ -5,7 +5,7 @@ user_name = ARGV
 
 ### ART ###
 def border
-    puts "*"*30
+    puts "*".colorize(:blue)*30
 end
 
 def clear
@@ -26,36 +26,9 @@ end
 
 def welcome
     border
-    # puts "=             __             ="
-    # puts "=            /  \\            ="
-    # puts "=           / ..|\\           ="
-    # puts "=          (_\\  |_)          ="
-    # puts "=          /  \\@'            ="
-    # puts "=         /     \\            ="
-    # puts "=     _  /  `   |            ="
-    # puts "=     \\/  \\  | _\\            ="
-    # puts "=      \\  /_ ||  \\_          ="
-    # puts "=       \\____)|_) \\_)        ="
-    # puts "=                            ="
-        # puts "=          ,-~~~~-,          ="
-        # puts "=    .-~~~;        ;~~~-.    ="
-        # puts "=   /    /          \\    \\   ="
-        # puts "=  {   .'{  O    O  }'.   }  ="
-        # puts "=   `~`  { .-~~~~-. }  `~`   ="
-        # puts "=        ;/        \\;        ="
-        # puts "=       /'._  ()  _.'\\       ="
-        # puts "=      /    `~~~~`    \\      ="
-        # puts "=     {                }     ="
-        # puts "=     {     }    {     }     ="
-        # puts "=     {     }    {     }     ="
-        # puts "=     /     \\    /     \\     ="
-        # puts "=    { { {   }~~{   } } }    ="
-        # puts "=     `~~~~~`    `~~~~~`     ="
-        # puts "=       (`========'`)        =" 
-        # puts "=       (_.=======._)        ="
     animation
-    puts "*"*30
-    puts ColorizedString["       BORK BORK       "].colorize(:red)
+    border
+    puts "        B O T   D O G       "
     border
     `afplay -t 1 ./sound-files/bark.mp3`
 end
@@ -65,10 +38,10 @@ end
 def menu
     # puts "Hooman! What would you like to do?"
     border
-    puts "Press 1 to pat BotDog"
-    puts "Press 2 to feed BotDog"
-    puts "Press 3 to play with BotDog"
-    puts "Press 9 to quit"
+    puts "Press 1 to " + "pat".colorize(:green)
+    puts "Press 2 to " + "feed".colorize(:green)
+    puts "Press 3 to " + "play".colorize(:green)
+    puts "Press 9 to " + "quit".colorize(:red)
     border
 end
 
@@ -89,7 +62,8 @@ $pat_counter += 1
         puts "= |             ||-'(/ ,--'  ="             
         puts "= |   BOTDOGS   ||  _ |      ="                
         puts "= |    CRIB     ||'' ||      ="                    
-        puts "= |_____________|| |_|L      =" 
+        puts "= |_____________|| |_|L      ="
+        puts "=                            =" 
         border 
         puts "You pat BotDog so much
                  he went to bed!"
@@ -98,6 +72,7 @@ $pat_counter += 1
     elsif $pat_counter < 3
         clear
         border
+        puts "=                            ="
         puts "=            _               ="
         puts "=       /\\,_/\\|              ="
         puts "=       /==_ (               ="
@@ -109,8 +84,14 @@ $pat_counter += 1
         puts "=         | | |    || |      ="
         puts "=    ,,-. ),)_/ ., ))_/,,.-,_="
         puts "=            . ,-/,_         ="
+        puts "=                            ="
         border
-        puts "You pat BotDog!"
+            if $pat_counter == 1
+                puts "You pat BotDog!"
+            elsif $pat_counter == 2
+                puts "BotDog looks a little sleepy!"
+            end
+        
     end
 end
 
@@ -121,6 +102,8 @@ def feed
     if $feed_counter == 3
         clear
         border
+        puts "=                            ="
+        puts "=                            ="
         puts "=                            ="  
         puts "=          }       }  {      ="      
         puts "=      {  { '_^_'  {   }     ="
@@ -130,6 +113,8 @@ def feed
         puts "=      '(___________)'       ="
         puts "=                            =" 
         puts "=           OH NO!           =" 
+        puts "=                            ="
+        puts "=                            ="
         border
         puts "You fed BotDog too much."
         puts "He pooped in your terminal!"
@@ -151,7 +136,12 @@ def feed
         puts "=    |______________|.'      ="
         puts "=                            ="
         border
-        puts "You fed BotDog!"
+            if $feed_counter == 1
+                puts "You fed BotDog!"
+            elsif $feed_counter == 2
+                puts "You fed BotDog more biscuits!"
+            end
+        
         end
     end
 
@@ -166,6 +156,7 @@ def play
         border
         puts "=                            ="
         puts "=                            ="
+        puts "=                            ="
         puts "=                  |\\        ="
         puts "=          /    /\\/o\\_       ="
         puts "=         (.-.__.(   __o     ="
@@ -174,6 +165,8 @@ def play
         puts "=      /   /  / \\            ="
         puts "=  ___:____\\__\\__\\_______    ="
         puts "=                            ="
+        puts "=                            ="
+        puts "=                            ="
         border
         puts "OH NO!" 
         puts "BotDog got too excited..."
@@ -181,6 +174,8 @@ def play
     elsif $play_counter < 3
         clear
         border
+        puts "=                            ="
+        puts "=                            ="
         puts "=                            ="
         puts "=                       _    ="       
         puts "=                  .  -  ()  =" 
@@ -191,8 +186,13 @@ def play
         puts "=   (_/'~~      ''''(;       =" 
         puts "=                            ="
         puts "=                            =" 
+        puts "=                            ="
         border
-        puts "You threw a ball for BotDog!"
+            if $play_counter == 1
+                puts "You threw a ball for BotDog!"
+            elsif $play_counter == 2
+                puts "Wow. BotDog is really excited!"
+            end
     end
 end
 
@@ -200,7 +200,9 @@ end
 ### GAME PLAY ###
 
 welcome
-puts "Hey #{ARGV}, I'm BotDog."
+puts "Hey #{ARGV}! Meet BotDog."
+puts "Your new favourite doggo"
+puts "Select from the below"
 
 $pat_counter = 0
 $feed_counter = 0
@@ -222,6 +224,7 @@ while game == true
         game = false
         exit
     else 
-        
+        puts "Uh oh! Can't do that yet!"
+        puts "Please select again"
     end
 end
