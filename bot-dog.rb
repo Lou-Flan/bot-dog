@@ -35,8 +35,22 @@ end
 def pat
 $pat_counter += 1
     if $pat_counter == 3
-        puts 
-        puts "BotDog.... loves.... patss zzz zzz zzzzzz"
+        puts "*"*30
+        puts "=                            ="
+        puts "=  .    .   *       *        ="
+        puts "=     *       .   )    .     =" 
+        puts "=          .        .        =" 
+        puts "=   .-------------.          =" 
+        puts "=  /_/_/_/_/_/_/_/ \\         ="       
+        puts "= //_/_/_/_/_/_// _ \\ __     ="      
+        puts "=/_/_/_/_/_/_/_/|/ \\.' .`-o  ="                
+        puts "= |             ||-'(/ ,--'  ="             
+        puts "= |             ||  _ |      ="                
+        puts "= |             ||'' ||      ="                    
+        puts "= |_____________|| |_|L      =" 
+        puts "*"*30 
+        puts "You pat BotDog so much
+                 he went to bed!"
         puts "ZZZ ZZZ ZZZ"
         exit
     elsif $pat_counter < 3
@@ -92,6 +106,8 @@ def play
         puts "You threw a ball for BotDog!"
     end
 end
+
+
 
 
 
