@@ -77,16 +77,23 @@ def play
     if $play_counter == 3
         puts "Oh dear. BotDog got too excited and peed in the terminal!"
     elsif $play_counter < 3
-        puts "      
-                (\
-                (\_\^^__o   .
-                `-'\ ` /   `(
-                |  \_____|
-                |        |                _
-                ./`,----./~|     .   . - ()"
-        puts "Bork! Fetch is my favourite <3"
+        puts "*"*30
+        puts "=                            ="
+        puts "=                       _    ="       
+        puts "=                  .  -  ()  =" 
+        puts "=              .--~~,__      =" 
+        puts "= :-....,-------`~~'._.''    =" 
+        puts "=   `-,,,  ,_      ;'~U'     =" 
+        puts "=    _,-' ,'`-__; '--.       =" 
+        puts "=   (_/'~~      ''''(;       =" 
+        puts "=                            ="
+        puts "=                            =" 
+        puts "*"*30
+        puts "You threw a ball for BotDog!"
     end
 end
+
+
 
 welcome
 puts "Hey #{ARGV}, I'm BotDog."
