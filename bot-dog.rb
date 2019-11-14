@@ -80,8 +80,19 @@ end
 def feed
     $feed_counter += 1
     if $feed_counter == 3
-        puts "BotDog is so full"
-        puts "Poopsy daisy"
+        border
+        puts "=                            ="  
+        puts "=          }       }  {      ="      
+        puts "=      {  { '_^_'  {   }     ="
+        puts "=       }  '(___)'    {      ="
+        puts "=      {  '(______)'   }     ="
+        puts "=       '(_________)'        ="
+        puts "=      '(___________)'       ="
+        puts "=                            =" 
+        puts "=           OH NO!           =" 
+        border
+        puts "You fed BotDog too much."
+        puts "He pooped in your terminal!"
         $feed_counter = 0
     elsif $feed_counter < 3
         border
@@ -102,6 +113,25 @@ def feed
         puts "You fed BotDog!"
         end
     end
+
+
+        # puts "=          ,-~~~~-,          ="
+        # puts "=    .-~~~;        ;~~~-.    ="
+        # puts "=   /    /          \\    \\   ="
+        # puts "=  {   .'{  O    O  }'.   }  ="
+        # puts "=   `~`  { .-~~~~-. }  `~`   ="
+        # puts "=        ;/        \\;       ="
+        # puts "=       /'._  ()  _.'\\      ="
+        # puts "=      /    `~~~~`    \\     ="
+        # puts "=     {                }     ="
+        # puts "=     {     }    {     }     ="
+        # puts "=     {     }    {     }     ="
+        # puts "=     /     \\    /     \\   ="
+        # puts "=    { { {   }~~{   } } }    ="
+        # puts "=     `~~~~~`    `~~~~~`     ="
+        # puts "=       (`"======="`)        =" 
+        # puts "=       (_.=======._)        ="
+
 
 def play
     $play_counter += 1
