@@ -1,7 +1,9 @@
 require 'colorize'
 require 'colorized_string'
 
-user_name = ARGV
+user_name = ARGV.to_s
+
+# ARGV.clear 
 
 ### ART ###
 def border
@@ -18,6 +20,7 @@ def animation(file_location)
     i = 1
     while i < 3
         puts "\e[H\e[2J"
+        border
       File.foreach(file_location + "#{i}.rb") { |f| puts f }
       sleep(0.3)
       i += 1
@@ -39,12 +42,21 @@ end
 def menu
     # puts "Hooman! What would you like to do?"
     border
-    puts "Press 1 to " + "pat".colorize(:green)
-    puts "Press 2 to " + "feed".colorize(:green)
-    puts "Press 3 to " + "play".colorize(:green)
-    puts "Press 9 to " + "quit".colorize(:red)
+    # puts "Press 1 to " + "P A T".colorize(:green)
+    # puts "Press 2 to " + "F E E D".colorize(:green)
+    # puts "Press 3 to " + "P L A Y".colorize(:green)
+    # puts "Press 9 to " + "Q U I T".colorize(:red)
+    puts "  PRESS  |  PRESS  |  PRESS  "
+    puts "    1    |    2    |    3    "
+    puts "   T O   |   T O   |   T O   "
+    puts "  "+"P A T ".colorize(:green) + " |"+" F E E D ".colorize(:green)+"|"+" P L A Y ".colorize(:green)
+    puts "------------------------------"
+    puts "  P R E S S  9  T O  Q U I T"
     border
 end
+
+
+
 
 ### Counters ###
 def pat
@@ -131,7 +143,6 @@ def play
         border
         animation("./animation/pee/")
         border
-        puts "OH NO!" 
         puts "BotDog got too excited..."
         puts "and peed in the terminal!"
     elsif $play_counter < 3
@@ -165,8 +176,8 @@ end
 welcome
 puts "Hey #{ARGV}! Meet BotDog."
 puts "Your new favourite doggo"
-puts "Select from the below"
-
+puts "Take good care of him."
+puts "Select from the below".colorize(:light_blue)
 $pat_counter = 0
 $feed_counter = 0
 $play_counter = 0
