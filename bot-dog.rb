@@ -12,19 +12,8 @@ def clear
     puts "\e[H\e[2J"
 end
 
-def animation
-    3.times do
-    i = 1
-    while i < 3
-        puts "\e[H\e[2J"
-      File.foreach("./animation/#{i}.rb") { |f| puts f }
-      sleep(0.3)
-      i += 1
-    end
-  end
-end
 
-def poop_animation(file_location)
+def animation(file_location)
     3.times do
     i = 1
     while i < 3
@@ -38,7 +27,7 @@ end
 
 def welcome
     border
-    animation
+    animation("./animation/")
     border
     puts "        B O T   D O G       "
     border
@@ -63,23 +52,11 @@ $pat_counter += 1
     if $pat_counter == 3
         clear
         border
-        puts "=                            ="
-        puts "=" + "  .    .   *       *        ".colorize(:yellow) + "="
-        puts "=" + "    *       .    )    .     ".colorize(:yellow) + "="
-        puts "=" + "           .         .      ".colorize(:yellow) + "=" 
-        puts "=   .-------------.          =" 
-        puts "=  /_/_/_/_/_/_/_/ \\         ="       
-        puts "= //_/_/_/_/_/_// _ \\ __     ="      
-        puts "=/_/_/_/_/_/_/_/|/ \\.' .`-o  ="                
-        puts "= |             ||-'(/ ,--'  ="             
-        puts "= |   BOTDOGS   ||  _ |      ="                
-        puts "= |    CRIB     ||'' ||      ="                    
-        puts "= |_____________|| |_|L      ="
-        puts "=                            =" 
+        animation("./animation/sleep/")
         border 
-        puts "You pat BotDog so much
-                 he went to bed!"
-        puts "ZZZ ZZZ ZZZ"
+        puts "You pat BotDog so much"
+        puts " that he went to bed!"
+        puts "Come back later!"
         exit
     elsif $pat_counter < 3
         clear
@@ -112,7 +89,7 @@ def feed
     if $feed_counter == 3
         clear
         border
-        poop_animation("./animation/poop/")
+        animation("./animation/poop/")
         border
         puts "You fed BotDog too much."
         puts "He pooped in your terminal!"
