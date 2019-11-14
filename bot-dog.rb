@@ -165,11 +165,12 @@ def play
         puts "=                            =" 
         border
         puts "You threw a ball for BotDog!"
+        `say "BotDog loves balls."`
     end
 end
 
 
-
+### GAME PLAY ###
 
 
 
@@ -187,7 +188,7 @@ $pat_counter = 0
 $feed_counter = 0
 $play_counter = 0
 
-until game = false
+while game = true
     menu
     selection = gets.chomp.to_i
 
