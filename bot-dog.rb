@@ -21,6 +21,7 @@ def welcome
     puts "*"*30
     puts "       WELCOME TO BOTDOG       "
     border
+    `afplay -t 1 ./sound-files/bark.mp3`
 end
 
 
