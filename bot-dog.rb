@@ -8,19 +8,52 @@ def border
     puts "*"*30
 end
 
+def clear
+    puts "\e[H\e[2J"
+end
+
+def animation
+    3.times do
+    i = 1
+    while i < 3
+        puts "\e[H\e[2J"
+      File.foreach("./animation/#{i}.rb") { |f| puts f }
+      sleep(0.3)
+      i += 1
+    end
+  end
+end
+
 def welcome
     border
-    puts "=             __             ="
-    puts "=            /  \\            ="
-    puts "=           / ..|\\           ="
-    puts "=          (_\\  |_)          ="
-    puts "=          /  \\@'            ="
-    puts "=         /     \\            ="
-    puts "=     _  /  `   |            ="
-    puts "=     \\/  \\  | _\\            ="
-    puts "=      \\  /_ ||  \\_          ="
-    puts "=       \\____)|_) \\_)        ="
-    puts "=                            ="
+    # puts "=             __             ="
+    # puts "=            /  \\            ="
+    # puts "=           / ..|\\           ="
+    # puts "=          (_\\  |_)          ="
+    # puts "=          /  \\@'            ="
+    # puts "=         /     \\            ="
+    # puts "=     _  /  `   |            ="
+    # puts "=     \\/  \\  | _\\            ="
+    # puts "=      \\  /_ ||  \\_          ="
+    # puts "=       \\____)|_) \\_)        ="
+    # puts "=                            ="
+        # puts "=          ,-~~~~-,          ="
+        # puts "=    .-~~~;        ;~~~-.    ="
+        # puts "=   /    /          \\    \\   ="
+        # puts "=  {   .'{  O    O  }'.   }  ="
+        # puts "=   `~`  { .-~~~~-. }  `~`   ="
+        # puts "=        ;/        \\;        ="
+        # puts "=       /'._  ()  _.'\\       ="
+        # puts "=      /    `~~~~`    \\      ="
+        # puts "=     {                }     ="
+        # puts "=     {     }    {     }     ="
+        # puts "=     {     }    {     }     ="
+        # puts "=     /     \\    /     \\     ="
+        # puts "=    { { {   }~~{   } } }    ="
+        # puts "=     `~~~~~`    `~~~~~`     ="
+        # puts "=       (`========'`)        =" 
+        # puts "=       (_.=======._)        ="
+    animation
     puts "*"*30
     puts ColorizedString["       BORK BORK       "].colorize(:red)
     border
@@ -35,7 +68,7 @@ def menu
     puts "Press 1 to pat BotDog"
     puts "Press 2 to feed BotDog"
     puts "Press 3 to play with BotDog"
-    puts "Press 000 to quit"
+    puts "Press 9 to quit"
     border
 end
 
@@ -43,6 +76,7 @@ end
 def pat
 $pat_counter += 1
     if $pat_counter == 3
+        clear
         border
         puts "=                            ="
         puts "=" + "  .    .   *       *        ".colorize(:yellow) + "="
@@ -62,6 +96,7 @@ $pat_counter += 1
         puts "ZZZ ZZZ ZZZ"
         exit
     elsif $pat_counter < 3
+        clear
         border
         puts "=            _               ="
         puts "=       /\\,_/\\|              ="
@@ -84,6 +119,7 @@ end
 def feed
     $feed_counter += 1
     if $feed_counter == 3
+        clear
         border
         puts "=                            ="  
         puts "=          }       }  {      ="      
@@ -99,6 +135,7 @@ def feed
         puts "He pooped in your terminal!"
         $feed_counter = 0
     elsif $feed_counter < 3
+        clear
         border
         puts "=                            ="      
         puts "=     ________________       ="
@@ -119,27 +156,13 @@ def feed
     end
 
 
-        # puts "=          ,-~~~~-,          ="
-        # puts "=    .-~~~;        ;~~~-.    ="
-        # puts "=   /    /          \\    \\   ="
-        # puts "=  {   .'{  O    O  }'.   }  ="
-        # puts "=   `~`  { .-~~~~-. }  `~`   ="
-        # puts "=        ;/        \\;       ="
-        # puts "=       /'._  ()  _.'\\      ="
-        # puts "=      /    `~~~~`    \\     ="
-        # puts "=     {                }     ="
-        # puts "=     {     }    {     }     ="
-        # puts "=     {     }    {     }     ="
-        # puts "=     /     \\    /     \\   ="
-        # puts "=    { { {   }~~{   } } }    ="
-        # puts "=     `~~~~~`    `~~~~~`     ="
-        # puts "=       (`"======="`)        =" 
-        # puts "=       (_.=======._)        ="
+
 
 
 def play
     $play_counter += 1
     if $play_counter == 3
+        clear
         border
         puts "=                            ="
         puts "=                            ="
@@ -156,6 +179,7 @@ def play
         puts "BotDog got too excited..."
         puts "and peed in the terminal!"
     elsif $play_counter < 3
+        clear
         border
         puts "=                            ="
         puts "=                       _    ="       
@@ -169,21 +193,11 @@ def play
         puts "=                            =" 
         border
         puts "You threw a ball for BotDog!"
-        `say "BotDog loves balls."`
     end
 end
 
 
 ### GAME PLAY ###
-
-
-
-
-
-
-
-
-
 
 welcome
 puts "Hey #{ARGV}, I'm BotDog."
@@ -192,7 +206,9 @@ $pat_counter = 0
 $feed_counter = 0
 $play_counter = 0
 
-while game = true
+game = true
+while game == true
+    
     menu
     selection = gets.chomp.to_i
 
@@ -202,10 +218,10 @@ while game = true
         feed
     elsif selection == 3
         play
-    elsif selection == 000
+    elsif selection == 9
         game = false
         exit
     else 
-        menu
+        
     end
 end
