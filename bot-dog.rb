@@ -129,19 +129,7 @@ def play
     if $play_counter == 3
         clear
         border
-        puts "=                            ="
-        puts "=                            ="
-        puts "=                            ="
-        puts "=                  |\\        ="
-        puts "=          /    /\\/o\\_       ="
-        puts "=         (.-.__.(   __O     ="
-        puts "=      /\\_(      .----'      ="
-        puts "=       "+".'".colorize(:yellow)+" \\____/            ="
-        puts "=      "+"/".colorize(:yellow)+"   /  / \\            ="
-        puts "=  ___"+":".colorize(:yellow)+"____\\__\\__\\_______    ="
-        puts "=                            ="
-        puts "=                            ="
-        puts "=                            ="
+        animation("./animation/pee/")
         border
         puts "OH NO!" 
         puts "BotDog got too excited..."
