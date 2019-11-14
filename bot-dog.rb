@@ -24,12 +24,12 @@ def animation
   end
 end
 
-def poop_animation
+def poop_animation(file_location)
     3.times do
     i = 1
     while i < 3
         puts "\e[H\e[2J"
-      File.foreach("./animation/poop/#{i}.rb") { |f| puts f }
+      File.foreach(file_location + "#{i}.rb") { |f| puts f }
       sleep(0.3)
       i += 1
     end
@@ -112,7 +112,7 @@ def feed
     if $feed_counter == 3
         clear
         border
-        poop_animation
+        poop_animation("./animation/poop/")
         border
         puts "You fed BotDog too much."
         puts "He pooped in your terminal!"
