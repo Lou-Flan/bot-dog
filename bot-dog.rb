@@ -24,6 +24,18 @@ def animation
   end
 end
 
+def poop_animation
+    3.times do
+    i = 1
+    while i < 3
+        puts "\e[H\e[2J"
+      File.foreach("./animation/poop/#{i}.rb") { |f| puts f }
+      sleep(0.3)
+      i += 1
+    end
+  end
+end
+
 def welcome
     border
     animation
@@ -90,11 +102,9 @@ $pat_counter += 1
                 puts "You pat BotDog!"
             elsif $pat_counter == 2
                 puts "BotDog looks a little sleepy!"
-            end
-        
+            end       
     end
 end
-
 
 
 def feed
@@ -102,19 +112,7 @@ def feed
     if $feed_counter == 3
         clear
         border
-        puts "=                            ="
-        puts "=                            ="
-        puts "=                            ="  
-        puts "=          }       }  {      ="      
-        puts "=      {  { '_^_'  {   }     ="
-        puts "=       }  '(___)'    {      ="
-        puts "=      {  '(______)'   }     ="
-        puts "=       '(_________)'        ="
-        puts "=      '(___________)'       ="
-        puts "=                            =" 
-        puts "=           OH NO!           =" 
-        puts "=                            ="
-        puts "=                            ="
+        poop_animation
         border
         puts "You fed BotDog too much."
         puts "He pooped in your terminal!"
@@ -159,11 +157,11 @@ def play
         puts "=                            ="
         puts "=                  |\\        ="
         puts "=          /    /\\/o\\_       ="
-        puts "=         (.-.__.(   __o     ="
+        puts "=         (.-.__.(   __O     ="
         puts "=      /\\_(      .----'      ="
-        puts "=       .' \\____/            ="
-        puts "=      /   /  / \\            ="
-        puts "=  ___:____\\__\\__\\_______    ="
+        puts "=       "+".'".colorize(:yellow)+" \\____/            ="
+        puts "=      "+"/".colorize(:yellow)+"   /  / \\            ="
+        puts "=  ___"+":".colorize(:yellow)+"____\\__\\__\\_______    ="
         puts "=                            ="
         puts "=                            ="
         puts "=                            ="
