@@ -4,7 +4,7 @@ require 'colorize'
 
 ############################## ART ##############################
 def border
-    puts "*".colorize(:blue)*30
+    puts "*".colorize(:magenta)*30
 end
 
 def clear
