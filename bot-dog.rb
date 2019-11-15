@@ -1,16 +1,8 @@
 require 'colorize'
-require 'colorized_string'
+# require 'colorized_string'
+ 
 
-if ARGV.length == 0
-    puts "Looks like we didn't catch your name. What can we call you?"
-    user_name = gets.chomp.to_s
-  else
-    user_name = ARGV[0]
-    ARGV.clear
-  end
-  
-
-# ### ART ###
+############################## ART ##############################
 def border
     puts "*".colorize(:blue)*30
 end
@@ -33,7 +25,11 @@ def animation(file_location)
     end
 end
 
-# ### WELCOME SCREEN ###
+def centre_text(string)
+    puts string.lines.map { |line| line.strip.center(30)}.join("\n")
+end
+
+############################## WELCOME SCREEN ##############################
 def welcome
     border
     animation("./animation/")
@@ -44,23 +40,16 @@ def welcome
 end
 
 
-# ### MENU SCREEN ###
+############################## MENU SCREEN ##############################
 def menu
     border
-    # puts "Press 1 to " + "P A T".colorize(:green)
-    # puts "Press 2 to " + "F E E D".colorize(:green)
-    # puts "Press 3 to " + "P L A Y".colorize(:green)
-    # puts "Press 9 to " + "Q U I T".colorize(:red)
-    puts "  PRESS  |  PRESS  |  PRESS  "
-    puts "    1    |    2    |    3    "
-    puts "   T O   |   T O   |   T O   "
+    centre_text("  PRESS  |  PRESS  |  PRESS  \n    1    |    2    |    3    \n       T O   |   T O   |   T O   \n")
     puts "  "+"P A T ".colorize(:green) + " |"+" F E E D ".colorize(:green)+"|"+" P L A Y ".colorize(:green)
-    puts "------------------------------"
-    puts "  P R E S S  9  T O  Q U I T"
+    centre_text("------------------------------\nP R E S S  9  T O  Q U I T")
     border
 end
 
-# ### OPTIONS & COUNTERS ###
+############################## OPTIONS & COUNTERS ##############################
 def pat
 $pat_counter += 1
     if $pat_counter == 3
@@ -68,9 +57,7 @@ $pat_counter += 1
         border
         animation("./animation/sleep/")
         border 
-        puts "You pat BotDog so much"
-        puts "that he went to bed!"
-        puts "Come back later!"
+        centre_text("You pat BotDog so much\n that he went to bed!\nCome back later!")
         exit
     elsif $pat_counter < 3
         clear
@@ -80,7 +67,7 @@ $pat_counter += 1
         puts "=       /\\,_/\\|              ="
         puts "=       /==_ (               ="
         puts "=      (Y_.) /       ///     ="
-        puts "=       U ) (__,_____) )     ="
+        puts "=       "+"U".colorize(:red)+" ) (__,_____) )     ="
         puts "=         )'   >     `/      ="
         puts "=         |._  _____  |      ="
         puts "=         | | (    \\| (      ="
@@ -90,9 +77,9 @@ $pat_counter += 1
         puts "=                            ="
         border
             if $pat_counter == 1
-                puts "You pat BotDog!"
+                centre_text("#{$user_name}, you pat BotDog!")
             elsif $pat_counter == 2
-                puts "BotDog looks a little sleepy!"
+                centre_text("BotDog looks a little sleepy...")
             end       
     end
 end
@@ -105,8 +92,7 @@ def feed
         border
         animation("./animation/poop/")
         border
-        puts "You fed BotDog too much."
-        puts "He pooped in your terminal!"
+        centre_text("You fed BotDog too much.\nHe pooped in your terminal!")
         $feed_counter = 0
     elsif $feed_counter < 3
         clear
@@ -118,17 +104,17 @@ def feed
         puts "=      .'|            .'|    ="
         puts "=    .'_____________.' .|    ="
         puts "=    |              |   |    ="
-        puts "=    |  BotDog _.-. | . |    ="
+        puts "=    |  "+"BotDog".colorize(:yellow)+" _.-. | . |    ="
         puts "=    |  *     (_.-' |   |    ="
-        puts "=    |    Biscuits  |  .|    ="
+        puts "=    |    "+"Biscuits ".colorize(:yellow)+" |  .|    ="
         puts "=    | *          * |  .'    ="
         puts "=    |______________|.'      ="
         puts "=                            ="
         border
             if $feed_counter == 1
-                puts "You fed BotDog!"
+                centre_text("#{$user_name}, you fed BotDog!")
             elsif $feed_counter == 2
-                puts "You fed BotDog more biscuits!"
+                centre_text("You fed BotDog more biscuits...")
             end
         
         end
@@ -142,8 +128,7 @@ def play
         border
         animation("./animation/pee/")
         border
-        puts "BotDog got too excited..."
-        puts "and peed in the terminal!"
+        centre_text("BotDog got too excited...\nand peed in the terminal!")
     elsif $play_counter < 3
         clear
         border
@@ -151,7 +136,7 @@ def play
         puts "=                            ="
         puts "=                            ="
         puts "=                       _    ="       
-        puts "=                  .  -  ()  =" 
+        puts "=                  .  -  "+"()".colorize(:red)+"  =" 
         puts "=              .--~~,__      =" 
         puts "= :-....,-------`~~'._.''    =" 
         puts "=   `-,,,  ,_      ;'~U'     =" 
@@ -162,24 +147,32 @@ def play
         puts "=                            ="
         border
             if $play_counter == 1
-                puts "You threw a ball for BotDog!"
+                centre_text("#{$user_name}, you threw a ball\n and BotDog chased it!")
             elsif $play_counter == 2
-                puts "Wow. BotDog is really excited!"
+                centre_text("Wow. BotDog is really hyped...")
             end
     end
 end
 
 
-### GAME PLAY ###
+############################## GAME PLAY ##############################
+begin
+
+if ARGV.length == 0
+    centre_text("Looks like we didn't catch your name.\nWhat can we call you?")
+    $user_name = gets.chomp.to_s
+else
+    $user_name = ARGV[0]
+    ARGV.clear
+end
 
 welcome
-puts "Hey #{user_name}!"
-puts "Meet BotDog"
-puts "Take good care of him".colorize(:light_blue)
+centre_text("Hey #{$user_name}!\nMeet BotDog!\nBest Behaved Boy!")
+puts "Take good care of him".center(30).colorize(:light_blue)
+
 $pat_counter = 0
 $feed_counter = 0
 $play_counter = 0
-
 game = true
 while game == true
     
@@ -196,7 +189,11 @@ while game == true
         game = false
         exit
     else 
-        puts "Uh oh! Can't do that yet!"
-        puts "Please select again"
+        centre_text("Uh oh! Can't do that yet!\nPlease select again")
     end
 end
+
+rescue
+    centre_text("Oops. Better try that again")
+end
+
