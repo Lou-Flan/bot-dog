@@ -1,30 +1,13 @@
-# Development Log
+**# Development Log**
 
-| WEEK | DAY      | MILESTONES                           |
-|------|----------|--------------------------------------|
-| 4    | Saturday | Received project
-|      |          | Talked through ideas with Senior Devs  |
-|      |          | Started on documentation       |
-|      |          | Outlined tasks in Trello           
-|  4   | Sunday   | Completed flow diagram         |
-| 5    | Tuesday | Plans approved by Senior Dev
-|       |           | Initiated git & github repos
-|       |       | Started coding                    |
-|      |          |         |
-|      |          | Status Update 2                      |
-|      |          | Create a new repo (local and remote) |
-|      |          | Start coding!                        |
-|      |          | Keep checking & updating Trello      |
-|      | Friday   | Status Update 3                      |
-|      |          | Keep coding and git committing       |
-|      |          | Keep checking & updating Trello      |
-|      | Saturday | Status Update 4                      |
-|      |          | Keep coding and git committing       |
-|      |          | Keep checking & updating Trello      |
-|      |          | Write help file                      |
-|      |          | Write bash script to run program     |
-|      |          | User Interaction Plan                |
-|      |          | Manual tests                         |
-| 6    | Thursday | Due date!                            |
-|      |          | Polish stuff off                     |
-|      | Friday   | Presentations at ACS                 |
+
+
+| Date                   | Entries                                                      |
+| ---------------------- | ------------------------------------------------------------ |
+| Saturday 9th November  | - Received project<br />- Discussed ideas with Senior Dev<br />- Started on documentation, focusing on Software Development Plan, user flow diagram and Implementation plan. <br />- Outlined tasks in Trello based on documentation so far |
+| Sunday 10th November   | - Completed user flow diagram<br />- Researched possible ruby Gems to use within code |
+| Tuesday 12th November  | - Documentation approved by Senior Dev <br />- Initiated git and remote GitHub repo<br />- Started coding<br />- Focused on MVP, beginning with basic functions to enable the user to interact with BotDog. Decided to put most of these into specified methods to keep code DRY.<br />- Regular git add, commit and push<br />- Regularly checked and updated Trello board |
+| Thursday 14th November | - Continued to work on coding MVP<br />- Trialled using 'asciiart' Ruby Gem on a seperate branch to master in git. Found that the gem was not suitable for the app as the output was not consistent in style and presented problems with sizing in the terminal. Tried several other options to combat this; other Ruby Gems and researched how to reduce the text size in terminal for the 'asciiart' but the time required to create solutions for this was not worth the output. Decided to go with Plan B of coding small ascii style images into the code so size and output could be controlled.<br />- To make the app more fun, I decided to make some of the ascii images animated using seperate .rb files within an images directory in the root directory, the code loops through the files and puts them to the screen.<br />- Added 'colorize' gem to Gemfile and implemented in code to make text elements and options in CLI more visible to user<br />- Added sound bite of dog barking upon open of app. Currently this code only works on Mac so I am going to look into different Ruby Gems to provide a better solution.<br />- Regular git add, commit and push<br />- Regularly checked and updated Trello board |
+| Friday 15th November   | - **Halfway Mark: Basic app is running with majority of features implemented. **Happy with progress of app so far and features that have been implemented. There are still some bugs within the code and I need to create a loop/error handling for ARGV.  Planning on completing documentation and bug handling before making any changes to the initial plan for the app.<br/>- Coding begin/rescue into script for error handling<br />- Began designing manual tests <br />- Wrote bash script to run program<br />- Regular git add, commit and push<br />- Regularly checked and updated Trello board |
+| Saturday 16th November | - Write help file                                            |
+
