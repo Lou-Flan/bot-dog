@@ -32,11 +32,11 @@ end
 ############################## WELCOME SCREEN ##############################
 def welcome
     border
-    animation("./animation/")
+    animation("./resources/animation/")
     border
     puts "        B O T   D O G       "
     border
-    `afplay -t 1 ./sound-files/bark.mp3`
+    `afplay -t 1 ./resources/sound-files/bark.mp3`
 end
 
 
@@ -55,7 +55,7 @@ $pat_counter += 1
     if $pat_counter == 3
         clear
         border
-        animation("./animation/sleep/")
+        animation("./resources/animation/sleep/")
         border 
         centre_text("You pat BotDog so much\n that he went to bed!\nCome back later!")
         exit
@@ -90,7 +90,7 @@ def feed
     if $feed_counter == 3
         clear
         border
-        animation("./animation/poop/")
+        animation("./resources/animation/poop/")
         border
         centre_text("You fed BotDog too much.\nHe pooped in your terminal!")
         $feed_counter = 0
@@ -126,7 +126,7 @@ def play
     if $play_counter == 3
         clear
         border
-        animation("./animation/pee/")
+        animation("./resources/animation/pee/")
         border
         centre_text("BotDog got too excited...\nand peed in the terminal!")
     elsif $play_counter < 3
