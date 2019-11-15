@@ -46,7 +46,6 @@ end
 
 # ### MENU SCREEN ###
 def menu
-    # puts "Hooman! What would you like to do?"
     border
     # puts "Press 1 to " + "P A T".colorize(:green)
     # puts "Press 2 to " + "F E E D".colorize(:green)
@@ -174,10 +173,9 @@ end
 ### GAME PLAY ###
 
 welcome
-puts "Hey #{user_name}! Meet BotDog."
-puts "Your new favourite doggo"
-puts "Take good care of him."
-puts "Select from the below".colorize(:light_blue)
+puts "Hey #{user_name}!"
+puts "Meet BotDog"
+puts "Take good care of him".colorize(:light_blue)
 $pat_counter = 0
 $feed_counter = 0
 $play_counter = 0
