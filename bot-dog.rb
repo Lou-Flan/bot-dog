@@ -1,11 +1,16 @@
 require 'colorize'
 require 'colorized_string'
 
-user_name = ARGV.to_s
+if ARGV.length == 0
+    puts "Looks like we didn't catch your name. What can we call you?"
+    user_name = gets.chomp.to_s
+  else
+    user_name = ARGV[0]
+    ARGV.clear
+  end
+  
 
-# ARGV.clear 
-
-### ART ###
+# ### ART ###
 def border
     puts "*".colorize(:blue)*30
 end
@@ -14,20 +19,21 @@ def clear
     puts "\e[H\e[2J"
 end
 
-
+# ### ANIMATION ###
 def animation(file_location)
     3.times do
-    i = 1
-    while i < 3
-        puts "\e[H\e[2J"
-        border
-      File.foreach(file_location + "#{i}.rb") { |f| puts f }
-      sleep(0.3)
-      i += 1
+        i = 1
+        while i < 3
+            puts "\e[H\e[2J"
+            border
+            File.foreach(file_location + "#{i}.rb") { |f| puts f }
+            sleep(0.3)
+            i += 1
+        end
     end
-  end
 end
 
+# ### WELCOME SCREEN ###
 def welcome
     border
     animation("./animation/")
@@ -38,7 +44,7 @@ def welcome
 end
 
 
-### Menu Screen ###
+# ### MENU SCREEN ###
 def menu
     # puts "Hooman! What would you like to do?"
     border
@@ -55,10 +61,7 @@ def menu
     border
 end
 
-
-
-
-### Counters ###
+# ### OPTIONS & COUNTERS ###
 def pat
 $pat_counter += 1
     if $pat_counter == 3
@@ -67,7 +70,7 @@ $pat_counter += 1
         animation("./animation/sleep/")
         border 
         puts "You pat BotDog so much"
-        puts " that he went to bed!"
+        puts "that he went to bed!"
         puts "Come back later!"
         exit
     elsif $pat_counter < 3
@@ -133,9 +136,6 @@ def feed
     end
 
 
-
-
-
 def play
     $play_counter += 1
     if $play_counter == 3
@@ -174,7 +174,7 @@ end
 ### GAME PLAY ###
 
 welcome
-puts "Hey #{ARGV}! Meet BotDog."
+puts "Hey #{user_name}! Meet BotDog."
 puts "Your new favourite doggo"
 puts "Take good care of him."
 puts "Select from the below".colorize(:light_blue)
