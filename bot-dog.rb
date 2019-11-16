@@ -4,10 +4,14 @@ require 'colorize'
 require 'tty-progressbar'
 
 
-############################## BORDER/CLEAR/TEXT ##############################
+############################## BORDERS/CLEAR SCREEN/TEXT ##############################
 def border
     puts "*".colorize(:magenta)*30
 end
+
+def empty_border(number) 
+    (number).times {puts "=#{" "*28}="}
+  end
 
 def clear
     puts "\e[H\e[2J"
@@ -19,6 +23,7 @@ end
 
 ############################## ANIMATIONS ##############################
 def animation(file_location)
+    border
     3.times do
         i = 1
         while i < 3
@@ -34,7 +39,7 @@ end
 def loading(string)
     bar = TTY::ProgressBar.new("#{string} [:bar]", total: 20)
     30.times do
-    sleep(0.06)
+    sleep(0.04)
     bar.advance(1)
     end
     
@@ -59,6 +64,58 @@ def menu
     border
 end
 
+############################ ART ##############################
+def pat_art
+    clear
+    border
+    empty_border(2)
+    puts "=       /\\,_/\\|              ="
+    puts "=       /==_ (               ="
+    puts "=      (Y_.) /       ///     ="
+    puts "=       "+"U".colorize(:red)+" ) (__,_____) )     ="
+    puts "=         )'   >     `/      ="
+    puts "=         |._  _____  |      ="
+    puts "=         | | (    \\| (      ="
+    puts "=         | | |    || |      ="
+    puts "=    ,,-. ),)_/ ., ))_/,,.-,_="
+    puts "=            . ,-/,_         ="
+    empty_border(1)
+    border
+end
+
+def feed_art
+    clear
+    border
+    empty_border(2)
+    puts "=    '------._.------'\\      ="
+    puts "=      \\_______________\\     ="
+    puts "=      .'|            .'|    ="
+    puts "=    .'_____________.' .|    ="
+    puts "=    |              |   |    ="
+    puts "=    |  "+"BotDog".colorize(:yellow)+" _.-. | . |    ="
+    puts "=    |  *     (_.-' |   |    ="
+    puts "=    |    "+"Biscuits ".colorize(:yellow)+" |  .|    ="
+    puts "=    | *          * |  .'    ="
+    puts "=    |______________|.'      ="
+    empty_border(1)
+    border
+end
+
+def play_art
+    clear
+    border
+    empty_border(4)       
+    puts "=                  .  -  "+"()".colorize(:red)+"  =" 
+    puts "=              .--~~,__      =" 
+    puts "= :-....,-------`~~'._.''    =" 
+    puts "=   `-,,,  ,_      ;'~U'     =" 
+    puts "=    _,-' ,'`-__; '--.       =" 
+    puts "=   (_/'~~      ''''(;       =" 
+    puts "=                            ="
+    empty_border(2)
+    border
+end
+
 ############################## PLAY OPTIONS ##############################
 def pat
 $pat_counter += 1
@@ -68,29 +125,18 @@ $pat_counter += 1
         animation("./resources/animation/sleep/")
         border 
         centre_text("You pat BotDog so much\n that he went to bed!\nCome back later!")
+        border
         exit
     elsif $pat_counter < 3
         clear
-        border
-        puts "=                            ="
-        puts "=            _               ="
-        puts "=       /\\,_/\\|              ="
-        puts "=       /==_ (               ="
-        puts "=      (Y_.) /       ///     ="
-        puts "=       "+"U".colorize(:red)+" ) (__,_____) )     ="
-        puts "=         )'   >     `/      ="
-        puts "=         |._  _____  |      ="
-        puts "=         | | (    \\| (      ="
-        puts "=         | | |    || |      ="
-        puts "=    ,,-. ),)_/ ., ))_/,,.-,_="
-        puts "=            . ,-/,_         ="
-        puts "=                            ="
-        border
+        empty_border(13)
             if $pat_counter == 1
                 loading("Patting")
+                pat_art
                 centre_text("#{$user_name}, you pat BotDog!")
             elsif $pat_counter == 2
                 loading("Patting")
+                pat_art
                 centre_text("BotDog looks a little sleepy...")
             end       
     end
@@ -108,26 +154,14 @@ def feed
         $feed_counter = 0
     elsif $feed_counter < 3
         clear
-        border
-        puts "=                            ="      
-        puts "=     ________________       ="
-        puts "=    '------._.------'\\      ="
-        puts "=      \\_______________\\     ="
-        puts "=      .'|            .'|    ="
-        puts "=    .'_____________.' .|    ="
-        puts "=    |              |   |    ="
-        puts "=    |  "+"BotDog".colorize(:yellow)+" _.-. | . |    ="
-        puts "=    |  *     (_.-' |   |    ="
-        puts "=    |    "+"Biscuits ".colorize(:yellow)+" |  .|    ="
-        puts "=    | *          * |  .'    ="
-        puts "=    |______________|.'      ="
-        puts "=                            ="
-        border
+        empty_border(13)
             if $feed_counter == 1
                 loading("Feeding")
+                feed_art
                 centre_text("#{$user_name}, you fed BotDog!")
             elsif $feed_counter == 2
                 loading("Feeding")
+                feed_art
                 centre_text("You fed BotDog more biscuits...")
             end
         
@@ -145,26 +179,14 @@ def play
         centre_text("BotDog got too excited...\nand peed in the terminal!")
     elsif $play_counter < 3
         clear
-        border
-        puts "=                            ="
-        puts "=                            ="
-        puts "=                            ="
-        puts "=                       _    ="       
-        puts "=                  .  -  "+"()".colorize(:red)+"  =" 
-        puts "=              .--~~,__      =" 
-        puts "= :-....,-------`~~'._.''    =" 
-        puts "=   `-,,,  ,_      ;'~U'     =" 
-        puts "=    _,-' ,'`-__; '--.       =" 
-        puts "=   (_/'~~      ''''(;       =" 
-        puts "=                            ="
-        puts "=                            =" 
-        puts "=                            ="
-        border
+        empty_border(13)
             if $play_counter == 1
                 loading("Playing")
+                play_art
                 centre_text("#{$user_name}, you threw a ball\n and BotDog chased it!")
             elsif $play_counter == 2
                 loading("Playing")
+                play_art
                 centre_text("Wow. BotDog is really hyped...")
             end
     end
