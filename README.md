@@ -89,3 +89,14 @@ $ ./run.sh
 - Ability to exit app at any time
 
   
+
+## Acknowledgements
+
+ASCII art images sourced from the following sites: 
+
+[Ascii-art.de](http://www.ascii-art.de/ascii/def/dogs.txt)
+
+[AsciiWorld.com](http://www.asciiworld.com/-Dogs-.html)
+
+[chris.com](http://www.chris.com/ascii/index.php?art=animals/dogs)
+
