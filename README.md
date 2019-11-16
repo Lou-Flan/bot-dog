@@ -46,6 +46,8 @@ $ bundle install
 
 ## Run Options
 
+> Please make sure your computer volume is turned on before running the application.
+
 For a more personalised experience, run the application by inputting the following command.
 
 ```

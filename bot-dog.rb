@@ -1,7 +1,8 @@
 ############################## GEMS ##############################
 require 'colorize'
-# require 'colorized_string'
 require 'tty-progressbar'
+require 'pp'
+require 'mac/say'
 
 
 ############################## BORDERS/CLEAR SCREEN/TEXT ##############################
@@ -39,12 +40,15 @@ end
 def loading(string)
     bar = TTY::ProgressBar.new("#{string} [:bar]", total: 20)
     30.times do
-    sleep(0.04)
-    bar.advance(1)
-    end
-    
-  end
+        sleep(0.04)
+        bar.advance(1)
+    end   
+end
 
+def voice(string)
+    talker = Mac::Say.new(voice: :alex, rate: 250)
+    talker.say string: (string)
+end
 ############################## WELCOME SCREEN ##############################
 def welcome
     border
@@ -52,7 +56,8 @@ def welcome
     border
     puts "        B O T   D O G       "
     border
-    `afplay -t 1 ./resources/sound-files/bark.mp3`
+    # `afplay -t 1 ./resources/sound-files/bark.mp3`
+    voice("Hi #{$user_name}, I am BotDog. You will be marvelled by my good behaviour")
 end
 
 ############################## MENU SCREEN ##############################
@@ -134,10 +139,12 @@ $pat_counter += 1
                 loading("Patting")
                 pat_art
                 centre_text("#{$user_name}, you pat BotDog!")
+                voice("Thanks for the pats #{$user_name}")
             elsif $pat_counter == 2
                 loading("Patting")
                 pat_art
                 centre_text("BotDog looks a little sleepy...")
+                voice("#{$user_name} sometimes I don't know if I am a dog or a robot")
             end       
     end
 end
@@ -151,6 +158,7 @@ def feed
         animation("./resources/animation/poop/")
         border
         centre_text("You fed BotDog too much.\nHe pooped in your terminal!")
+        voice("#{$user_name} it looks like someone pooped in your terminal. It wasn't me. I swear")
         $feed_counter = 0
     elsif $feed_counter < 3
         clear
@@ -159,10 +167,12 @@ def feed
                 loading("Feeding")
                 feed_art
                 centre_text("#{$user_name}, you fed BotDog!")
+                voice("bork bork feed me more #{$user_name}")
             elsif $feed_counter == 2
                 loading("Feeding")
-                feed_art
+                feed_art                
                 centre_text("You fed BotDog more biscuits...")
+                voice("Hot damn I love biscuits")
             end
         
         end
@@ -177,6 +187,8 @@ def play
         animation("./resources/animation/pee/")
         border
         centre_text("BotDog got too excited...\nand peed in the terminal!")
+        voice("#{$user_name}. Why did you pee in your terminal?")
+
     elsif $play_counter < 3
         clear
         empty_border(13)
@@ -184,10 +196,12 @@ def play
                 loading("Playing")
                 play_art
                 centre_text("#{$user_name}, you threw a ball\n and BotDog chased it!")
+                voice("Yay. Ball. My favourite")
             elsif $play_counter == 2
                 loading("Playing")
                 play_art
                 centre_text("Wow. BotDog is really hyped...")
+                voice("#{$user_name}. Can you throw that again. But like you mean it?")
             end
     end
 end
@@ -213,6 +227,7 @@ puts "Take good care of him".center(30).colorize(:light_blue)
 $pat_counter = 0
 $feed_counter = 0
 $play_counter = 0
+
 game = true
 while game == true
     
@@ -226,8 +241,15 @@ while game == true
     elsif selection == 3
         play
     elsif selection == 9
+        voice("Bye #{$user_name}")
         game = false
         exit
+
+    ########### EASTER EGG #############
+    elsif selection == 8
+        voice("#{$user_name} you found the easter egg. What do you call a robotic dog?")
+        voice(" A cybork. Ha ha ha ha. I am hilarious.")
+    #####################################
     else 
         centre_text("Uh oh! Can't do that yet!\nPlease select again")
     end
