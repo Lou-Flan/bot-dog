@@ -1,9 +1,10 @@
 ############################## GEMS ##############################
 require 'colorize'
 # require 'colorized_string'
- 
+require 'tty-progressbar'
 
-############################## ART ##############################
+
+############################## BORDER/CLEAR/TEXT ##############################
 def border
     puts "*".colorize(:magenta)*30
 end
@@ -12,7 +13,11 @@ def clear
     puts "\e[H\e[2J"
 end
 
-############################## ANIMATION ##############################
+def centre_text(string)
+    puts string.lines.map { |line| line.strip.center(30)}.join("\n")
+end
+
+############################## ANIMATIONS ##############################
 def animation(file_location)
     3.times do
         i = 1
@@ -26,9 +31,14 @@ def animation(file_location)
     end
 end
 
-def centre_text(string)
-    puts string.lines.map { |line| line.strip.center(30)}.join("\n")
-end
+def loading(string)
+    bar = TTY::ProgressBar.new("#{string} [:bar]", total: 20)
+    30.times do
+    sleep(0.06)
+    bar.advance(1)
+    end
+    
+  end
 
 ############################## WELCOME SCREEN ##############################
 def welcome
@@ -40,7 +50,6 @@ def welcome
     `afplay -t 1 ./resources/sound-files/bark.mp3`
 end
 
-
 ############################## MENU SCREEN ##############################
 def menu
     border
@@ -50,7 +59,7 @@ def menu
     border
 end
 
-############################## OPTIONS & COUNTERS ##############################
+############################## PLAY OPTIONS ##############################
 def pat
 $pat_counter += 1
     if $pat_counter == 3
@@ -78,8 +87,10 @@ $pat_counter += 1
         puts "=                            ="
         border
             if $pat_counter == 1
+                loading("Patting")
                 centre_text("#{$user_name}, you pat BotDog!")
             elsif $pat_counter == 2
+                loading("Patting")
                 centre_text("BotDog looks a little sleepy...")
             end       
     end
@@ -113,8 +124,10 @@ def feed
         puts "=                            ="
         border
             if $feed_counter == 1
+                loading("Feeding")
                 centre_text("#{$user_name}, you fed BotDog!")
             elsif $feed_counter == 2
+                loading("Feeding")
                 centre_text("You fed BotDog more biscuits...")
             end
         
@@ -148,8 +161,10 @@ def play
         puts "=                            ="
         border
             if $play_counter == 1
+                loading("Playing")
                 centre_text("#{$user_name}, you threw a ball\n and BotDog chased it!")
             elsif $play_counter == 2
+                loading("Playing")
                 centre_text("Wow. BotDog is really hyped...")
             end
     end
