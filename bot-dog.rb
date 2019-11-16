@@ -45,8 +45,10 @@ def loading(string)
     end   
 end
 
+pp Mac::Say.voice(:name, :oliver)
+
 def voice(string)
-    talker = Mac::Say.new(voice: :alex, rate: 250)
+    talker = Mac::Say.new(voice: :oliver)
     talker.say string: (string)
 end
 ############################## WELCOME SCREEN ##############################
@@ -139,11 +141,11 @@ $pat_counter += 1
                 loading("Patting")
                 pat_art
                 centre_text("#{$user_name}, you pat BotDog!")
-                voice("Thanks for the pats #{$user_name}")
+                voice("Thanks for the pats #{$user_name}. My tail is wagging so hard I look like a hellicopter")
             elsif $pat_counter == 2
                 loading("Patting")
                 pat_art
-                centre_text("BotDog looks a little sleepy...")
+                centre_text("BotDog looks a little sleepy...\nBe careful patting him again")
                 voice("#{$user_name} sometimes I don't know if I am a dog or a robot")
             end       
     end
@@ -171,8 +173,8 @@ def feed
             elsif $feed_counter == 2
                 loading("Feeding")
                 feed_art                
-                centre_text("You fed BotDog more biscuits...")
-                voice("Hot damn I love biscuits")
+                centre_text("You fed BotDog more biscuits...\nWhat will happen if\nhe eats more...")
+                voice("I have been eating the same biscuits for 17 years and they're still my favourite")
             end
         
         end
@@ -196,11 +198,11 @@ def play
                 loading("Playing")
                 play_art
                 centre_text("#{$user_name}, you threw a ball\n and BotDog chased it!")
-                voice("Yay. Ball. My favourite")
+                voice("Yay. Ball. My favourite. Fetch is life.")
             elsif $play_counter == 2
                 loading("Playing")
                 play_art
-                centre_text("Wow. BotDog is really hyped...")
+                centre_text("Wow. BotDog is really hyped...\nI wonder what he'll do if\nyou pat him again...")
                 voice("#{$user_name}. Can you throw that again. But like you mean it?")
             end
     end
@@ -248,10 +250,11 @@ while game == true
     ########### EASTER EGG #############
     elsif selection == 8
         voice("#{$user_name} you found the easter egg. What do you call a robotic dog?")
-        voice(" A cybork. Ha ha ha ha. I am hilarious.")
+        voice(" A cy bork. Ha ha ha ha. I am hilarious.")
     #####################################
     else 
         centre_text("Uh oh! Can't do that yet!\nPlease select again")
+            voice("I am a clever boy but I can't do that")
     end
 end
 
