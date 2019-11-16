@@ -1,3 +1,4 @@
+############################## GEMS ##############################
 require 'colorize'
 # require 'colorized_string'
  
@@ -11,7 +12,7 @@ def clear
     puts "\e[H\e[2J"
 end
 
-# ### ANIMATION ###
+############################## ANIMATION ##############################
 def animation(file_location)
     3.times do
         i = 1
@@ -158,6 +159,7 @@ end
 ############################## GAME PLAY ##############################
 begin
 
+# App checks if user has input their name as an argument on the command line and prompts user to input their name if ARGV is empty
 if ARGV.length == 0
     centre_text("Looks like we didn't catch your name.\nWhat can we call you?")
     $user_name = gets.chomp.to_s
@@ -170,6 +172,7 @@ welcome
 centre_text("Hey #{$user_name}!\nMeet BotDog!\nBest Behaved Boy!")
 puts "Take good care of him".center(30).colorize(:light_blue)
 
+#Game play loop begins with increment counters set to 0. Global variables utilised for use within pat, feed and play methods
 $pat_counter = 0
 $feed_counter = 0
 $play_counter = 0
