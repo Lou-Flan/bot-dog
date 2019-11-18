@@ -22,7 +22,7 @@ def centre_text(string)
     puts string.lines.map { |line| line.strip.center(30)}.join("\n")
 end
 
-############################## ANIMATIONS ##############################
+############################## ANIMATIONS & SOUND ##############################
 def animation(file_location)
     border
     3.times do
@@ -45,7 +45,7 @@ def loading(string)
     end   
 end
 
-pp Mac::Say.voice(:name, :oliver)
+# pp Mac::Say.voice(:name, :oliver)
 
 def voice(string)
     talker = Mac::Say.new(voice: :oliver)
@@ -58,7 +58,6 @@ def welcome
     border
     puts "        B O T   D O G       "
     border
-    # `afplay -t 1 ./resources/sound-files/bark.mp3`
     voice("Hi #{$user_name}, I am BotDog. You will be marvelled by my good behaviour")
 end
 
@@ -66,7 +65,7 @@ end
 def menu
     border
     centre_text("  PRESS  |  PRESS  |  PRESS  \n    1    |    2    |    3    \n       T O   |   T O   |   T O   \n")
-    puts "  "+"P A T ".colorize(:green) + " |"+" F E E D ".colorize(:green)+"|"+" P L A Y ".colorize(:green)
+    puts "  #{"P A T ".colorize(:green)} | #{"F E E D ".colorize(:green)}| #{"P L A Y ".colorize(:green)}"
     centre_text("------------------------------\nP R E S S  9  T O  Q U I T")
     border
 end
@@ -79,7 +78,7 @@ def pat_art
     puts "=       /\\,_/\\|              ="
     puts "=       /==_ (               ="
     puts "=      (Y_.) /       ///     ="
-    puts "=       "+"U".colorize(:red)+" ) (__,_____) )     ="
+    puts "=       #{"U".colorize(:red)} ) (__,_____) )     ="
     puts "=         )'   >     `/      ="
     puts "=         |._  _____  |      ="
     puts "=         | | (    \\| (      ="
@@ -99,9 +98,9 @@ def feed_art
     puts "=      .'|            .'|    ="
     puts "=    .'_____________.' .|    ="
     puts "=    |              |   |    ="
-    puts "=    |  "+"BotDog".colorize(:yellow)+" _.-. | . |    ="
+    puts "=    |  #{"BotDog".colorize(:yellow)} _.-. | . |    ="
     puts "=    |  *     (_.-' |   |    ="
-    puts "=    |    "+"Biscuits ".colorize(:yellow)+" |  .|    ="
+    puts "=    |    #{"Biscuits ".colorize(:yellow)} |  .|    ="
     puts "=    | *          * |  .'    ="
     puts "=    |______________|.'      ="
     empty_border(1)
@@ -112,7 +111,7 @@ def play_art
     clear
     border
     empty_border(4)       
-    puts "=                  .  -  "+"()".colorize(:red)+"  =" 
+    puts "=                  .  -  #{"()".colorize(:red)}  =" 
     puts "=              .--~~,__      =" 
     puts "= :-....,-------`~~'._.''    =" 
     puts "=   `-,,,  ,_      ;'~U'     =" 
@@ -250,7 +249,7 @@ while game == true
     ########### EASTER EGG #############
     elsif selection == 8
         voice("#{$user_name} you found the easter egg. What do you call a robotic dog?")
-        voice(" A cy bork. Ha ha ha ha. I am hilarious.")
+        voice("A cy bork. Ha ha ha ha. I am hilarious.")
     #####################################
     else 
         centre_text("Uh oh! Can't do that yet!\nPlease select again")

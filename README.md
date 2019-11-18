@@ -19,7 +19,7 @@ Documentation: https://github.com/Lou-Flan/bot-dog/tree/master/documentation
 
 ##  System Requirements
 
-BotDog utilies `afplay` which is Mac dependent. 
+BotDog utilies gems that are Mac dependent and will not function on other operating systems.
 
 BotDog has only been tested on Mac OS Mojave version 10.14.6.
 
@@ -46,9 +46,7 @@ $ bundle install
 
 ## Run Options
 
-> Please make sure your computer volume is turned on before running the application.
-
-For a more personalised experience, run the application by inputting the following command.
+For a more personalised experience, run the application by inputting the following command. Please make sure your computer volume is turned on before running the application.
 
 ```
 $ ruby bot-dog.rb
@@ -62,7 +60,7 @@ $ ruby bot-dog.rb name
 
 ### _Or_
 
-Alternatively, you can run the application with the bash script supplied in the source code. This will give you a default user name within the app.
+Alternatively, you can run the application with the bash script supplied in the source code. The script will check that your operating system is OS X, set your volume to 50% and give you a default user name.
 
 To do so you will need to run the following line of code before running the bash script.
 
@@ -89,6 +87,8 @@ $ ./run.sh
 - ASCII art and ASCII art animations
 
 - Ability to exit app at any time
+
+- 
 
   
 
