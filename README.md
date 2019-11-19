@@ -1,6 +1,6 @@
-## Description
+## **Description**
 
-Due to little time, small city homes and many offices not allowing pets at work, many developers miss out on having a pet dog. **BotDog**  is a Tamagotchi style game where the user feeds, pats and plays with a dog that lives in the CLI.
+Due to little time, small city homes and many offices not allowing pets at work, many developers miss out on having a pet dog. **BotDog**  is a Tamagotchi style game, written in Ruby and executed from the command line giving users a pet dog to feed, pat and play with.
 
 
 
@@ -15,7 +15,7 @@ Documentation: https://github.com/Lou-Flan/bot-dog/tree/master/documentation
 
 
 
-##  System Requirements
+##  **System Requirements**
 
 BotDog utilies gems that are Mac dependent and will not function on other operating systems.
 
@@ -31,18 +31,18 @@ The following **Ruby Gems** are required and are included in the Gemfile.
 
 
 
-## R
+## **How to Install and Run**
 
-1. If you do not have Ruby on your computer, follow these instructions to [download and install](https://www.ruby-lang.org/en/documentation/installation/).
-2. Clone the project files onto your computer from the source code here: https://github.com/Lou-Flan/bot-dog.
-3. On the terminal command line, navigate to the bot-dog directory you just cloned.
-4. If you do not have the 'bundler' gem installed on your computer, please enter the following code.
+- If you do not have Ruby on your computer, follow these instructions to [download and install](https://www.ruby-lang.org/en/documentation/installation/).
+- Clone the project files onto your computer from the source code here: https://github.com/Lou-Flan/bot-dog.
+- On the terminal command line, navigate to the bot-dog directory you just cloned.
+- If you do not have the 'bundler' gem installed on your computer, please enter the following code.
 
 ```
 $ install bundler
 ```
 
-4. Once 'bundler' has been installed, enter the following code to install the gems required for the application.
+- Once 'bundler' has been installed, enter the following code to install the gems required for the application.
 
 ```
 $ bundle install 
@@ -50,21 +50,20 @@ $ bundle install
 
 
 
-For a more personalised experience, run the application by inputting the following command. 
+- For a more personalised experience, run the application by inputting the following command (make sure your volume is turned on). 
 
-> Please make sure your computer volume is turned on before running the application.
 
 ```
 $ ruby bot-dog.rb
 ```
 
-You also have the option to enter your name as argument from the command line for use within the app.
+- You also have the option to enter your name as argument from the command line for use within the app.
 
 ```$ 
 $ ruby bot-dog.rb name
 ```
 
-### _Or_
+### **_Or_**
 
 Alternatively, you can run the application with the bash script supplied in the source code. The script will check that your operating system is OS X, set your volume to 50% and give you a default user name.
 
@@ -82,7 +81,7 @@ $ ./run.sh
 
 
 
-## Features
+## **Features**
 
 - Customise experience by entering user name as an argument in command line
 
@@ -98,7 +97,7 @@ $ ./run.sh
 
   
 
-## Acknowledgements
+## **Acknowledgements**
 
 ASCII art images sourced from the following sites: 
 
