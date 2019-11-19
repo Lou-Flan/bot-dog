@@ -1,8 +1,6 @@
 ## Description
 
-Due to little time, small city homes and many offices not allowing pets at work, many developers miss out on having a pet dog. 
-
-**BotDog**  is a Tamagotchi style game where the user feeds, pats and plays with a dog that lives in the CLI.
+Due to little time, small city homes and many offices not allowing pets at work, many developers miss out on having a pet dog. **BotDog**  is a Tamagotchi style game where the user feeds, pats and plays with a dog that lives in the CLI.
 
 
 
@@ -25,7 +23,15 @@ BotDog has only been tested on Mac OS Mojave version 10.14.6.
 
 
 
-## Installation Instructions
+The following **Ruby Gems** are required and are included in the Gemfile.
+
+- gem "colorize", "~> 0.8.1"
+- gem "tty-progressbar", "~> 0.17.0"
+- gem "mac-say", "~> 0.2.1"
+
+
+
+## Run Application
 
 1. If you do not have Ruby on your computer, follow these instructions to [download and install](https://www.ruby-lang.org/en/documentation/installation/).
 2. Clone the project files onto your computer from the source code here: https://github.com/Lou-Flan/bot-dog.
@@ -44,9 +50,9 @@ $ bundle install
 
 
 
-## Run Options
+For a more personalised experience, run the application by inputting the following command. 
 
-For a more personalised experience, run the application by inputting the following command. Please make sure your computer volume is turned on before running the application.
+> Please make sure your computer volume is turned on before running the application.
 
 ```
 $ ruby bot-dog.rb
@@ -78,7 +84,7 @@ $ ./run.sh
 
 ## Features
 
-- Customise experience by entering name as an arg in command line
+- Customise experience by entering user name as an argument in command line
 
 - Receives user input to make selection with unique outcomes
 
@@ -86,9 +92,9 @@ $ ./run.sh
 
 - ASCII art and ASCII art animations
 
-- Ability to exit app at any time
+- Sound
 
-- 
+- Ability to exit app at any time
 
   
 

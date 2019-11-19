@@ -139,7 +139,7 @@ $pat_counter += 1
             if $pat_counter == 1
                 loading("Patting")
                 pat_art
-                centre_text("#{$user_name}, you pat BotDog!")
+                centre_text("#{$user_name}, you pat BotDog!\nHe looks like he wants more.")
                 voice("Thanks for the pats #{$user_name}. My tail is wagging so hard I look like a hellicopter")
             elsif $pat_counter == 2
                 loading("Patting")
