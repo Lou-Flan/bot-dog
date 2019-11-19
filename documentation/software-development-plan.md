@@ -67,3 +67,12 @@ Trello Board: https://trello.com/b/gD3uUVfs/botdog
 I used Trello to manage implementation of BotDog; please access the Trello board via the above link. I have also outlined the tasks in the below table.
 
 
+
+| MVP Feature    | Checklist                                                    | Deadline      |
+| -------------- | ------------------------------------------------------------ | ------------- |
+| Play           | - Design method to hold function<br />- Display a mesage each time the user decides to play<br />- Add an incremental counter<br />- When the counter reaches three, BotDog does something<br>- Display a screen/message to let the user know that their action has been completed | 15th November |
+| Pat            | - Design method to hold function<br />- Display a mesage each time the user decides to feed<br />- Add an incremental counter<br />- When the counter reaches three, a message appears and the app closes<br/>- Display a screen/message to let the user know when BotDog has been fed | 15th November |
+| Feed           | - Design method to hold function<br />- Display a mesage each time the user decides to feed<br />- Add an incremental counter<br />- When the counter reaches three, BotDog does something<br/>- Display a screen/message to let the user know that their action has been completed | 15th November |
+| Menu           | - Menu should be puts to screen each time a selection is required<br/>- Menu should have all available options displayed to user<br />- Menu should prompt users for input<br />- Should be easy to read<br />- Should appear below the animation/art | 14th November |
+| ARGV           | - Review how to use ARGV and store data in a variable<br />- Store ARGV in a variable to use throughout app<br />- Test that any data can be input to ARGV from the command line<br />- Add an if/else statement to check that a user has stored their name in ARGV upon running the app<br />- Clear ARGV to enable use of gets later in the script | 17th November |
+| Game play loop | - Call methods for each play function within the game play loop<br />- User must be able to exit the loop and the game at any time<br />- Menu must be displayed within the loop<br />- Take user input to make game play selections<br />- Handle errors and incorrect user input with if/else statements | 16th November |
