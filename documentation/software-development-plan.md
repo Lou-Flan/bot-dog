@@ -2,15 +2,15 @@
 
 
 
-## Statement of Purpose and Scope
+## **Statement of Purpose and Scope**
 
 
 
 #### What will this application do?
 
-This application is a Tamagotchi style game where the user feeds, pats and plays with a dog that lives in the CLI. 
+This application is a Tamagotchi style game where the user feeds, pats and plays with a naughty dog that lives in the CLI. 
 
-####  What problem is this application solving?**
+####  **What problem is this application solving?**
 
 Due to little time, small city homes and many offices not allowing pets at work, many developers miss out on having a pet dog. BotDog can be visited any time in the CLI so is the preffered choice of pet by landlords and bosses alike.
 
@@ -20,27 +20,19 @@ The target audience is developers who love dogs.
 
 #### **How will the target audience use this application?**
 
-Developers will use this application anytime they need a break from coding and have access to a computer with BotDog installed. The application can be accessed from the command line.
+Developers will use this application anytime they need a break from coding and have access to a Mac. Once downloaded, the application can be accessed from the command line; users will need to input simple commands to interact with BotDog in the CLI.
 
 
 
-## Features
+## **Features**
 
+BotDog will feature three primary means of interaction; feed, pat or play.
 
+**1. Menu Screen**: The application features a method which prints a menu to the screen giving the user four choices of input: press 1 to pat, press 2 to feed, press 3 to play or press 9 to quit. The menu method is called within a game play loop to print to screen everytime a selection is required. The loop contains if/else statements to further handle errors or incorrect user input.
 
-**1. Feed BotDog**: Feed will be a loop with increment counter stored in an array, each time the user selects to feed, the counter will increase by one. Once the counter is equal to three, BotDog will poop in the terminal and the counter will reset to zero.
+**2. Feed/Pat or Play with BotDog**: The user has the option to feed, pat or play with BotDog with specified key inputs. Each option has it's own defined method and method containing ASCII art. During gameplay, the methods are called inside a loop with corresponding increment counters stored in arrays. Each time the user inputs one of the options, the respective counter will increase by one. Each method has a unique action when it's respective counter reaches 3. The gameplay loop utilises if/else statements to gracefully handle errors and incorrect user input.
 
-**2. Pat BotDog**:  Pat will be a loop with increment counter stored in an array, each time the user selects to pat, the counter will increase by one. If the counter reaches three, BotDog will fall asleep and the application will quit.
-
-**3. Play with BotDog**:  Play will be a loop with increment counter stored in an array, each time the user selects to play, the counter will increase by one. If the counter reaches three, BotDog will urinate in the terminal and the counter will reset to zero.
-
-**4. Menu Screen**: There will be a method containing menu options for the user to select from throughout the app.
-
-
-
-\- use of variables and the concept of variable scope
-\- loops and conditional control structures
-\- error handling
+**3. User can input their name from the command line**: The user has the option to run the bash script for a default user name or personalise their experience by entering their name as an argument from the command line. The data stored in ARGV is then saved into a variable for use throughout the app and ARGV is cleared to allow use of gets. The app will check the length of ARGV upon open and prompt the user to enter their name if they did not do so in the command line.
 
 
 
@@ -52,7 +44,7 @@ The user will be welcomed to the application with an animation of BotDog and a m
 
 #### **How the user will interact with/use each feature**
 
-The user will need to type pre-determined commands into the terminal to interact with the app. The options menu will be present on the screen whenever a selection needs to be made. Each time a selection is made, 'tty-progressbar' will commence, followed by either ascii art or an ascii animation plus sound via mac-say.
+The user will need to input pre-determined commands into the terminal to interact with the app. The options menu will be present on the screen whenever a selection needs to be made. Each time a selection is made, 'tty-progressbar' will commence, followed by either ascii art or an ascii animation plus sound via mac-say to let the user know that something is happening.
 
 #### **How errors will be handled by the application and displayed to the user**
 
@@ -64,4 +56,14 @@ The app is also only functional on mac, the bash script provided will check if t
 
 ## **Control Flow Diagram**
 
-![control-flow-diagram](/Users/louiseflanagan/Documents/coder-academy/LouiseFlanagan_T1A3/documentation/control-flow-diagram.jpg)
+![control-flow-diagram](/./documentation/control-flow-diagram.jpg)
+
+
+
+## **Implementation Plan**
+
+Trello Board: https://trello.com/b/gD3uUVfs/botdog
+
+I used Trello to manage implementation of BotDog; please access the Trello board via the above link. I have also outlined the tasks in the below table.
+
+

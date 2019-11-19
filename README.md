@@ -31,7 +31,7 @@ The following **Ruby Gems** are required and are included in the Gemfile.
 
 
 
-## Run Application
+## R
 
 1. If you do not have Ruby on your computer, follow these instructions to [download and install](https://www.ruby-lang.org/en/documentation/installation/).
 2. Clone the project files onto your computer from the source code here: https://github.com/Lou-Flan/bot-dog.
