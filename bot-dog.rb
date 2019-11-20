@@ -54,7 +54,7 @@ def loading(string)
     end   
 end
 
-pp Mac::Say.voice(:name, :oliver)
+# pp Mac::Say.voice(:name, :oliver)
 
 def voice(string)
     talker = Mac::Say.new(voice: :oliver)
